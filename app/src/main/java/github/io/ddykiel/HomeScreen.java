@@ -3,6 +3,7 @@ package github.io.ddykiel;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -55,21 +56,27 @@ public class HomeScreen extends AppCompatActivity {
 
         for (Button b: statusButtons){
             b.setEnabled(false);
+            b.setBackgroundColor(Color.parseColor("#d8d8d8"));
         }
 
         final TextView textViewHandlerTest = (TextView) findViewById(R.id.textViewHandlerTest);
         final Handler handler = new Handler();
+
         handler.post(new Runnable(){
-            boolean defaultHandlerState = true;
+            boolean defaultHandlerState = false;
             @Override
             public void run(){
                 if (defaultHandlerState){
                     textViewHandlerTest.setText("State A");
+                    //defaultHandlerState = !defaultHandlerState;
+                    //handler.postDelayed(this, 30,000);
                 } else {
                     textViewHandlerTest.setText("State B");
+                    //defaultHandlerState = !defaultHandlerState;
+                    //handler.postDelayed(this, 30,000);
                 }
                 defaultHandlerState = !defaultHandlerState;
-                handler.postDelayed(this, 10,0000);
+                handler.postDelayed(this, 30,000);
             }
         });
 
@@ -80,10 +87,26 @@ public class HomeScreen extends AppCompatActivity {
                 if (isChecked){
                     for (Button b: statusButtons){
                         b.setEnabled(true);
+                        if (b.equals(buttonRedStatus)){
+                            b.setBackgroundColor(Color.parseColor("#eb7573"));
+                        }
+                        if (b.equals(buttonPurpleStatus)){
+                            b.setBackgroundColor(Color.parseColor("#b476c0"));
+                        }
+                        if (b.equals(buttonBlueStatus)){
+                            b.setBackgroundColor(Color.parseColor("#7f7ebc"));
+                        }
+                        if (b.equals(buttonGreenStatus)){
+                            b.setBackgroundColor(Color.parseColor("#73ad6d"));
+                        }
+                        if (b.equals(buttonYellowStatus)){
+                            b.setBackgroundColor(Color.parseColor("#e6d996"));
+                        }
                     }
                 } else {
                     for (Button b: statusButtons){
                         b.setEnabled(false);
+                        b.setBackgroundColor(Color.parseColor("#d8d8d8"));
                     }
                     imageViewScrunchie.setImageResource(R.drawable.grayscrunchie);
                 }
