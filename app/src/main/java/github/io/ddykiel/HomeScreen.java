@@ -12,6 +12,7 @@ import android.widget.Switch;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import android.os.Handler;
 
 public class HomeScreen extends AppCompatActivity {
 
@@ -55,6 +56,23 @@ public class HomeScreen extends AppCompatActivity {
         for (Button b: statusButtons){
             b.setEnabled(false);
         }
+
+        final TextView textViewHandlerTest = (TextView) findViewById(R.id.textViewHandlerTest);
+        final Handler handler = new Handler();
+        handler.post(new Runnable(){
+            boolean defaultHandlerState = true;
+            @Override
+            public void run(){
+                if (defaultHandlerState){
+                    textViewHandlerTest.setText("State A");
+                } else {
+                    textViewHandlerTest.setText("State B");
+                }
+                defaultHandlerState = !defaultHandlerState;
+                handler.postDelayed(this, 10,0000);
+            }
+        });
+
 
         switchActiveScrunchie.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener(){
             @Override

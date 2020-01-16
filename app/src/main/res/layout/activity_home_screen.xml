@@ -100,10 +100,10 @@
         android:layout_height="278dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.146"
+        app:layout_constraintHorizontal_bias="0.137"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.115"
+        app:layout_constraintVertical_bias="0.066"
         app:srcCompat="@drawable/grayscrunchie" />
 
     <TextView
@@ -114,10 +114,10 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.33"
+        app:layout_constraintHorizontal_bias="0.307"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499" />
+        app:layout_constraintVertical_bias="0.483" />
 
     <Button
         android:id="@+id/buttonInfoScreen"
@@ -148,15 +148,14 @@
         android:id="@+id/textViewRoommate1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="95dp"
         android:text="Roommmate1"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/buttonInfoScreen"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.147"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.824" />
 
     <TextView
         android:id="@+id/textViewRoom"
@@ -171,4 +170,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.998" />
+
+    <TextView
+        android:id="@+id/textViewHandlerTest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.792"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonYellowStatus"
+        app:layout_constraintVertical_bias="0.136" />
 </androidx.constraintlayout.widget.ConstraintLayout>
