@@ -26,14 +26,16 @@ public class HomeScreen extends AppCompatActivity {
         final Button buttonGreenStatus = (Button) findViewById(R.id.buttonGreenStatus);
         final Button buttonYellowStatus = (Button) findViewById(R.id.buttonYellowStatus);
 
+        final Button buttonInfoScreen = (Button) findViewById(R.id.buttonInfoScreen);
+
         final Switch switchActiveScrunchie = (Switch) findViewById(R.id.switchActiveScrunchie);
 
         final ImageView imageViewScrunchie = (ImageView) findViewById(R.id.imageViewScrunchie);
 
         Intent intent = getIntent();
-        RoomModel userRoom = (RoomModel) intent.getSerializableExtra("userRoom");
-        RoommateModel user = (RoommateModel) intent.getSerializableExtra("user");
-        RoommateModel firstRoomie = (RoommateModel) intent.getSerializableExtra("firstRoomie");
+        final RoomModel userRoom = (RoomModel) intent.getSerializableExtra("userRoom");
+        final RoommateModel user = (RoommateModel) intent.getSerializableExtra("user");
+        final RoommateModel firstRoomie = (RoommateModel) intent.getSerializableExtra("firstRoomie");
 
         TextView textViewRoom = (TextView) findViewById(R.id.textViewRoom);
         String textViewRoomString = "You are in room " + userRoom.getRoomName();
@@ -61,19 +63,7 @@ public class HomeScreen extends AppCompatActivity {
                     for (Button b: statusButtons){
                         b.setEnabled(true);
                     }
-                    /* buttonRedStatus.setEnabled(true);
-                    buttonPurpleStatus.setEnabled(true);
-                    buttonBlueStatus.setEnabled(true);
-                    buttonGreenStatus.setEnabled(true);
-                    buttonYellowStatus.setEnabled(true);
-                    System.out.println("Buttons enabled!");*/
                 } else {
-                    /*buttonRedStatus.setEnabled(false);
-                    buttonPurpleStatus.setEnabled(false);
-                    buttonBlueStatus.setEnabled(false);
-                    buttonGreenStatus.setEnabled(false);
-                    buttonYellowStatus.setEnabled(false);
-                    System.out.println("Buttons disabled!");*/
                     for (Button b: statusButtons){
                         b.setEnabled(false);
                     }
@@ -112,22 +102,18 @@ public class HomeScreen extends AppCompatActivity {
                 imageViewScrunchie.setImageResource(R.drawable.yellowscrunchie);
             }
         });
+        buttonInfoScreen.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent startIntent = new Intent(getApplicationContext(), InfoScreen.class);
+                startIntent.putExtra("userRoom", userRoom);
+                startIntent.putExtra("user", user);
+                startIntent.putExtra("firstRoomie", firstRoomie);
+                startActivity(startIntent);
+            }
+        });
 
-    }
 
-    // Figure out how to make these methods work
-    public ArrayList<Button> enableButtons(ArrayList<Button> statusButtons){
-        for (Button b: statusButtons){
-            b.setEnabled(true);
-        }
-        return statusButtons;
-    }
-
-    public ArrayList<Button> disableButtons(ArrayList<Button> statusButtons){
-        for (Button b: statusButtons){
-            b.setEnabled(false);
-        }
-        return statusButtons;
     }
 
 }

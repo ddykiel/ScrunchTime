@@ -4,4 +4,15 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="InfoScreenColors">
+    Welcome to the Scrunch Time app! For quick reference, here is the meaning of each scrunchie color.
+        \n\nRed: Do not disturb
+        \n\nPurple: Knock first
+        \n\nBlue: Neutral
+        \n\nGreen: Feeling social
+        \n\nYellow: Friends in dorm
+    </string>
+    <string name="InfoScreenAboutApp">
+        Scrunch time was developed to facilitate roommate communication. By selecting the color that best represents your mood, you can quickly and easily share that information with your roommate.
+    </string>
 </resources>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"    xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".InfoScreen"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/textViewInformationTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:text="Information"
+        android:layout_gravity="center"
+        android:textSize="24sp"
+        />
+
+    <TextView
+        android:id="@+id/textViewColorCode"
+        android:layout_width="wrap_content"
+        android:layout_height="317dp"
+        android:layout_weight="1"
+        android:paddingLeft="20dp"
+        android:paddingTop="20dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="20dp"
+        android:text="@string/InfoScreenColors" />
+
+    <TextView
+        android:id="@+id/textViewAboutAppTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:text="About the App"
+        android:layout_gravity="center"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/textViewAboutApp"
+        android:layout_width="wrap_content"
+        android:layout_height="233dp"
+        android:paddingLeft="20dp"
+        android:paddingTop="20dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="20dp"
+        android:text="@string/InfoScreenAboutApp" />
+
+    <Button
+        android:id="@+id/buttonHomeScreen"
+        android:layout_width="421dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="4"
+        android:text="Go to Home Screen" />
+</LinearLayout>

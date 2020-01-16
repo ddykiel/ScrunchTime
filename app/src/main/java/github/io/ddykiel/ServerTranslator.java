@@ -1,6 +1,7 @@
 package github.io.ddykiel;
 
 public class ServerTranslator {
+// ArrayList serverPair;
 
     public ServerTranslator(){
     }
@@ -35,9 +36,21 @@ public class ServerTranslator {
     }
 
     // It may be better to de-couple this from RoommateModel
-    // We could create a HashTable<RoommateModel, Int> to map RoommateModels to IDs
-    // However, I feel like there's more potential for this to go wrong... so for now, RoommateIDs are stored in the RoommmateModel object
     int convertName(RoommateModel r){
         return r.getRoommateID();
+    }
+
+    // Helper class: stores RoommateModel and ID
+    // Using this instead of a HashMap since roommate objects are mutable
+    public class serverPair{
+
+        private RoommateModel roommate;
+        private int id;
+
+        public serverPair(RoommateModel r, int i){
+            roommate = r;
+            id = i;
+        }
+
     }
 }
