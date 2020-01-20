@@ -1,9 +1,13 @@
 package github.io.ddykiel;
 
+import java.util.HashMap;
+
 public class ServerTranslator {
 // ArrayList serverPair;
+    private HashMap<Integer, Integer> clientToServerIDs;
 
     public ServerTranslator(){
+        clientToServerIDs = new HashMap<Integer, Integer>();
     }
 
     // Translates the string "status," used on the client side, to the corresponding integers on the server side
@@ -35,22 +39,13 @@ public class ServerTranslator {
         return intStatus;
     }
 
-    // It may be better to de-couple this from RoommateModel
-    int convertName(RoommateModel r){
-        return r.getRoommateID();
+    int convertID(RoommateModel r){
+        int clientID = r.getRoommateClientID();
+        return clientToServerIDs.get(clientID);
     }
 
-    // Helper class: stores RoommateModel and ID
-    // Using this instead of a HashMap since roommate objects are mutable
-    public class serverPair{
-
-        private RoommateModel roommate;
-        private int id;
-
-        public serverPair(RoommateModel r, int i){
-            roommate = r;
-            id = i;
-        }
-
+    void addID(RoommateModel r){
+        clientToServerIDs.put(r.getRoommateClientID(), -1);
     }
+
 }

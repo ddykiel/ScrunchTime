@@ -6,6 +6,7 @@ public class RoomModel implements Serializable {
     private String roomName;
     private ArrayList<RoommateModel> roomies;
     private RoommateModel user;
+    private ServerTranslator translator;
 
     public RoomModel(String s, RoommateModel currentUser, RoommateModel firstRoommate){
 
@@ -13,8 +14,8 @@ public class RoomModel implements Serializable {
         user = currentUser;
 
         roomies = new ArrayList<RoommateModel>();
-        roomies.add(currentUser);
         roomies.add(firstRoommate);
+        translator = new ServerTranslator();
     }
 
     String getRoomName(){
@@ -37,5 +38,11 @@ public class RoomModel implements Serializable {
         roomies.add(r);
     }
 
-    // Stubbed: removing roommate
+    void removeRoommate(RoommateModel r){
+        roomies.remove(r);
+    }
+
+    ServerTranslator getTranslator(){
+        return translator;
+    }
 }

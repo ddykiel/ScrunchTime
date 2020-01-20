@@ -8,102 +8,91 @@
 
     <Button
         android:id="@+id/buttonRedStatus"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="63dp"
+        android:layout_height="41dp"
         android:background="#eb7573"
-        android:text=""
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.842"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.128"
-        android:padding="5dp"
-        />
-
-    <Button
-        android:id="@+id/buttonPurpleStatus"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#b476c0"
+        android:padding="25dp"
         android:text=""
         app:layout_constraintBottom_toTopOf="@+id/buttonBlueStatus"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.842"
+        app:layout_constraintHorizontal_bias="0.809"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonRedStatus"
-        app:layout_constraintVertical_bias="0.0"
-        android:padding="5dp"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/switchActiveScrunchie"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/buttonPurpleStatus"
+        android:layout_width="65dp"
+        android:layout_height="38dp"
+        android:background="#b476c0"
+        android:padding="25dp"
+        android:text=""
+        app:layout_constraintBottom_toTopOf="@+id/textViewHandlerTest"
+        app:layout_constraintStart_toStartOf="@+id/buttonYellowStatus"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewScrunchie"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/buttonBlueStatus"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="64dp"
+        android:layout_height="38dp"
         android:background="#7f7ebc"
+        android:padding="25dp"
         android:text=""
         app:layout_constraintBottom_toTopOf="@+id/buttonGreenStatus"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.842"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonPurpleStatus"
-        android:padding="5dp"
-        />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/buttonRedStatus"
+        app:layout_constraintTop_toBottomOf="@+id/buttonRedStatus" />
 
     <Button
         android:id="@+id/buttonGreenStatus"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="64dp"
+        android:layout_height="42dp"
         android:background="#73ad6d"
+        android:padding="25dp"
         android:text=""
         app:layout_constraintBottom_toTopOf="@+id/buttonYellowStatus"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.842"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonBlueStatus"
-        android:padding="5dp"
-        />
+        app:layout_constraintStart_toStartOf="@+id/buttonBlueStatus"
+        app:layout_constraintTop_toBottomOf="@+id/buttonBlueStatus" />
 
     <Button
         android:id="@+id/buttonYellowStatus"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="400dp"
+        android:layout_width="65dp"
+        android:layout_height="39dp"
         android:background="#e6d996"
+        android:padding="25dp"
         android:text=""
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.842"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonGreenStatus"
-        android:padding="5dp"
-        />
+        app:layout_constraintBottom_toTopOf="@+id/buttonPurpleStatus"
+        app:layout_constraintStart_toStartOf="@+id/buttonGreenStatus"
+        app:layout_constraintTop_toBottomOf="@+id/buttonGreenStatus" />
 
     <Switch
         android:id="@+id/switchActiveScrunchie"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Status"
+        android:checked="false"
+        android:paddingTop="10dp"
+        android:showText="true"
         android:textOff="Inactive"
         android:textOn="Active"
-        android:checked="false"
         app:layout_constraintBottom_toTopOf="@+id/buttonRedStatus"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.841"
+        app:layout_constraintHorizontal_bias="0.801"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        />
+        app:showText="true" />
 
     <ImageView
         android:id="@+id/imageViewScrunchie"
-        android:layout_width="193dp"
-        android:layout_height="278dp"
+        android:layout_width="133dp"
+        android:layout_height="188dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.137"
+        app:layout_constraintHorizontal_bias="0.147"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.066"
+        app:layout_constraintVertical_bias="0.103"
         app:srcCompat="@drawable/grayscrunchie" />
 
     <TextView
@@ -112,12 +101,10 @@
         android:layout_height="wrap_content"
         android:text="You"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonPurpleStatus"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.307"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.483" />
+        app:layout_constraintHorizontal_bias="0.267"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/buttonInfoScreen"
@@ -133,8 +120,8 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="179dp"
-        android:layout_height="133dp"
+        android:layout_width="96dp"
+        android:layout_height="91dp"
         android:layout_marginTop="65dp"
         android:layout_marginBottom="130dp"
         app:layout_constraintBottom_toTopOf="@+id/buttonInfoScreen"
@@ -149,13 +136,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Roommmate1"
-        android:textSize="18sp"
+        android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.147"
+        app:layout_constraintHorizontal_bias="0.107"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.824" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.104" />
 
     <TextView
         android:id="@+id/textViewRoom"
@@ -178,8 +165,8 @@
         android:text="TextView"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.792"
+        app:layout_constraintHorizontal_bias="0.812"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonYellowStatus"
-        app:layout_constraintVertical_bias="0.136" />
+        app:layout_constraintVertical_bias="0.144" />
 </androidx.constraintlayout.widget.ConstraintLayout>

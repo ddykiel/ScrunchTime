@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class WelcomeScreen extends AppCompatActivity {
 
@@ -24,13 +25,17 @@ public class WelcomeScreen extends AppCompatActivity {
                 // Access text the user input and convert it to strings/ints to create RoomModel and RoommateModel objects
                 EditText userName = (EditText) findViewById(R.id.editTextUserName);
                 String userNameString = userName.getText().toString();
-                System.out.println("User name: " + userNameString);
 
                 EditText roommateName = (EditText) findViewById(R.id.editTextRoommateName);
                 String roommateNameString = roommateName.getText().toString();
 
+                int roommateIDInt = -1; // Default value
+
                 EditText roommateID = (EditText) findViewById(R.id.editTextRoommateID);
-                int roommateIDInt = Integer.parseInt(roommateID.getText().toString());
+                String roommateIDString = roommateID.getText().toString();
+                if (!roommateIDString.matches("")){
+                    roommateIDInt = Integer.parseInt(roommateIDString);
+                }
 
                 EditText roomName = (EditText) findViewById(R.id.editTextRoomName);
                 String roomNameString = roomName.getText().toString();
@@ -38,15 +43,30 @@ public class WelcomeScreen extends AppCompatActivity {
                 // Hard-coded for client testing: later these ints will be accessed from server
                 int userIDInt = 00000;
 
-                RoommateModel user = new RoommateModel(true, userNameString, userIDInt);
-                RoommateModel firstRoomie = new RoommateModel(false, roommateNameString, roommateIDInt);
-                RoomModel userRoom = new RoomModel(roomNameString, user, firstRoomie);
+                // Checks if any fields are left empty
+                boolean conditions = userNameString.matches("") || roommateNameString.matches("")
+                        || roommateIDString.matches("") || roomNameString.matches("");
 
-                Intent startIntent = new Intent(getApplicationContext(), HomeScreen.class);
-                startIntent.putExtra("userRoom", userRoom);
-                startIntent.putExtra("user", user);
-                startIntent.putExtra("firstRoomie", firstRoomie);
-                startActivity(startIntent);
+
+                if (!conditions){
+                    RoommateModel user = new RoommateModel(true, userNameString, 0);
+                    RoommateModel firstRoomie = new RoommateModel(false, roommateNameString, 1);
+                    RoomModel userRoom = new RoomModel(roomNameString, user, firstRoomie);
+
+                    ServerTranslator translator = userRoom.getTranslator();
+                    translator.addID(user);
+                    translator.addID(firstRoomie);
+
+                    Intent startIntent = new Intent(getApplicationContext(), HomeScreen.class);
+                    startIntent.putExtra("userRoom", userRoom);
+                    startActivity(startIntent);
+                }
+
+                if (conditions){
+                    Toast.makeText(WelcomeScreen.this, "Make sure all fields are entered", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
 
             }
         });

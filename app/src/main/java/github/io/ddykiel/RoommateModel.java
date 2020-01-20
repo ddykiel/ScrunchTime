@@ -5,12 +5,12 @@ public class RoommateModel implements Serializable {
     private boolean isUser;
     private String status;
     private String roommateName;
-    private int roommateID;
+    private int roommateClientID;
 
     public RoommateModel(boolean b, String s, int i){
         isUser = b;
         roommateName = s;
-        roommateID = i; // Eventually phase out?
+        roommateClientID = i;
         status = "INACTIVE";
     }
 
@@ -38,7 +38,7 @@ public class RoommateModel implements Serializable {
         roommateName = s;
     }
 
-    int getRoommateID(){
-        return roommateID;
+    int getRoommateClientID(){
+        return roommateClientID;
     }
 }
