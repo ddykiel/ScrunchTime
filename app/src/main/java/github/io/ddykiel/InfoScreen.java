@@ -18,16 +18,12 @@ public class InfoScreen extends AppCompatActivity {
 
         Intent intent = getIntent();
         final RoomModel userRoom = (RoomModel) intent.getSerializableExtra("userRoom");
-        final RoommateModel user = (RoommateModel) intent.getSerializableExtra("user");
-        final RoommateModel firstRoomie = (RoommateModel) intent.getSerializableExtra("firstRoomie");
 
         buttonHomeScreen.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
                 Intent startIntent = new Intent(getApplicationContext(), HomeScreen.class);
                 startIntent.putExtra("userRoom", userRoom);
-                startIntent.putExtra("user", user);
-                startIntent.putExtra("firstRoomie", firstRoomie);
                 startActivity(startIntent);
             }
         });
