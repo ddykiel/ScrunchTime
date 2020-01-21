@@ -13,7 +13,6 @@ import android.widget.Switch;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import android.os.Handler;
 
 public class HomeScreen extends AppCompatActivity {
 
@@ -35,6 +34,13 @@ public class HomeScreen extends AppCompatActivity {
         switchActiveScrunchie.setTextOff("Inactive");
 
         final ImageView imageViewScrunchie = (ImageView) findViewById(R.id.imageViewScrunchie);
+        final ImageView imageViewFirstRoomie = (ImageView) findViewById(R.id.imageViewFirstRoomie);
+        final ImageView imageViewSecondRoomie = (ImageView) findViewById(R.id.imageViewSecondRoomie);
+        final ImageView imageViewThirdRoomie = (ImageView) findViewById(R.id.imageViewThirdRoomie);
+
+        TextView textViewFirstRoomie = (TextView) findViewById(R.id.textViewFirstRoomie);
+        TextView textViewSecondRoomie = (TextView) findViewById(R.id.textViewSecondRoomie);
+        TextView textViewThirdRoomie = (TextView) findViewById(R.id.textViewThirdRoomie);
 
         Intent intent = getIntent();
         final RoomModel userRoom = (RoomModel) intent.getSerializableExtra("userRoom");
@@ -42,22 +48,30 @@ public class HomeScreen extends AppCompatActivity {
         ArrayList<RoommateModel> roomies = userRoom.getRoommates();
 
         // Create roommates: there can be up to 3
+
         int numRoomies = roomies.size();
+        String secondRoomieName = "";
+        String thirdRoomieName = "";
+
         final RoommateModel firstRoomie = roomies.get(0);
         if (roomies.size() > 1){
             final RoommateModel secondRoomie = roomies.get(1);
+            secondRoomieName = secondRoomie.getRoommateName();
+            setRoommateScrunchieColor(imageViewSecondRoomie, secondRoomie);
         }
         if (roomies.size() > 2){
             final RoommateModel thirdRoomie = roomies.get(2);
+            thirdRoomieName = thirdRoomie.getRoommateName();
+            setRoommateScrunchieColor(imageViewThirdRoomie, thirdRoomie);
         }
+
+        textViewFirstRoomie.setText(firstRoomie.getRoommateName());
+        textViewSecondRoomie.setText(secondRoomieName);
+        textViewThirdRoomie.setText(thirdRoomieName);
 
         TextView textViewRoom = (TextView) findViewById(R.id.textViewRoom);
         String textViewRoomString = "You are in room " + userRoom.getRoomName();
         textViewRoom.setText(textViewRoomString);
-
-        TextView textViewRoommate1 = (TextView) findViewById(R.id.textViewRoommate1);
-        textViewRoommate1.setText(firstRoomie.getRoommateName());
-
 
         final ArrayList<Button> statusButtons = new ArrayList<Button>();
         statusButtons.add(buttonRedStatus);
@@ -118,6 +132,7 @@ public class HomeScreen extends AppCompatActivity {
                             }
                         }
                     } else {
+                        user.setStatus("INACTIVE");
                         for (Button b: statusButtons){
                             b.setEnabled(false);
                             b.setBackgroundColor(Color.parseColor("#d8d8d8"));
@@ -129,32 +144,41 @@ public class HomeScreen extends AppCompatActivity {
 
         buttonRedStatus.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
-                    imageViewScrunchie.setImageResource(R.drawable.redscrunchie);
+                    user.setStatus("RED");
+                    setRoommateScrunchieColor(imageViewScrunchie, user);
                     // Call server to update ID
                 }
             });
 
         buttonPurpleStatus.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
-                    imageViewScrunchie.setImageResource(R.drawable.purplescrunchie);
+                    user.setStatus("PURPLE");
+                    setRoommateScrunchieColor(imageViewScrunchie, user);
+                    // Call server to update ID
                 }
             });
 
         buttonBlueStatus.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
-                    imageViewScrunchie.setImageResource(R.drawable.bluescrunchie);
+                    user.setStatus("BLUE");
+                    setRoommateScrunchieColor(imageViewScrunchie, user);
+                    // Call server to update ID
                 }
             });
 
         buttonGreenStatus.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
-                    imageViewScrunchie.setImageResource(R.drawable.greenscrunchie);
+                    user.setStatus("GREEN");
+                    setRoommateScrunchieColor(imageViewScrunchie, user);
+                    // Call server to update ID
                 }
             });
 
         buttonYellowStatus.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
-                    imageViewScrunchie.setImageResource(R.drawable.yellowscrunchie);
+                    user.setStatus("YELLOW");
+                    setRoommateScrunchieColor(imageViewScrunchie, user);
+                    // Call server to update ID
                 }
             });
         buttonInfoScreen.setOnClickListener(new View.OnClickListener(){
@@ -166,6 +190,30 @@ public class HomeScreen extends AppCompatActivity {
             }
         });
 
+    }
+
+    // Right now, we only call this function once. In future versions of the app, we want to call this function every time the background update method registers a change in a roommate status.
+    public void setRoommateScrunchieColor(ImageView i, RoommateModel r){
+        String status = r.getStatus();
+
+        if (status.equals("RED")){
+            i.setImageResource(R.drawable.redscrunchie);
+        }
+        if (status.equals("PURPLE")){
+            i.setImageResource(R.drawable.purplescrunchie);
+        }
+        if (status.equals("BLUE")){
+            i.setImageResource(R.drawable.bluescrunchie);
+        }
+        if (status.equals("GREEN")){
+            i.setImageResource(R.drawable.greenscrunchie);
+        }
+        if (status.equals("YELLOW")){
+            i.setImageResource(R.drawable.yellowscrunchie);
+        }
+        if (status.equals("INACTIVE")){
+            i.setImageResource(R.drawable.grayscrunchie);
+        }
 
     }
 
