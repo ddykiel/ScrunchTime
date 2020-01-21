@@ -162,8 +162,6 @@ public class HomeScreen extends AppCompatActivity {
                 public void onClick(View view) {
                     Intent startIntent = new Intent(getApplicationContext(), InfoScreen.class);
                     startIntent.putExtra("userRoom", userRoom);
-                    //startIntent.putExtra("user", user);
-                    //startIntent.putExtra("firstRoomie", firstRoomie);
                     startActivity(startIntent);
             }
         });

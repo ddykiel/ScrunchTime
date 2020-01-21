@@ -11,11 +11,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
         android:text="Welcome to Scrunch Time!"
-        android:textSize="30sp"
+        android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/editTextUserName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.485"
@@ -108,4 +106,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextRoomName"
         app:layout_constraintVertical_bias="0.709" />
+
+    <TextView
+        android:id="@+id/textViewInfo"
+        android:layout_width="362dp"
+        android:layout_height="46dp"
+        android:text='Once you start the app, you can go to the "Info" screen to add up to two more roommates.'
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonStartApp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextRoomName"
+        android:padding="20dp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

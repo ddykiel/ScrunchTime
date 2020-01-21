@@ -1,8 +1,9 @@
 package github.io.ddykiel;
 
+import java.io.Serializable;
 import java.util.HashMap;
 
-public class ServerTranslator {
+public class ServerTranslator implements Serializable {
 // ArrayList serverPair;
     private HashMap<Integer, Integer> clientToServerIDs;
 

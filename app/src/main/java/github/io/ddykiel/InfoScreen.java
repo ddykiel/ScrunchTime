@@ -15,6 +15,7 @@ public class InfoScreen extends AppCompatActivity {
         setContentView(R.layout.activity_info_screen);
 
         Button buttonHomeScreen = (Button) findViewById(R.id.buttonHomeScreen);
+        Button buttonAddRoommate = (Button) findViewById(R.id.buttonAddRoommate);
 
         Intent intent = getIntent();
         final RoomModel userRoom = (RoomModel) intent.getSerializableExtra("userRoom");
@@ -23,6 +24,15 @@ public class InfoScreen extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent startIntent = new Intent(getApplicationContext(), HomeScreen.class);
+                startIntent.putExtra("userRoom", userRoom);
+                startActivity(startIntent);
+            }
+        });
+
+        buttonAddRoommate.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent startIntent = new Intent(getApplicationContext(), AddRoommateActivity.class);
                 startIntent.putExtra("userRoom", userRoom);
                 startActivity(startIntent);
             }
