@@ -27,7 +27,7 @@
         android:background="#b476c0"
         android:padding="25dp"
         android:text=""
-        app:layout_constraintBottom_toTopOf="@+id/textViewHandlerTest"
+        app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintStart_toStartOf="@+id/buttonYellowStatus"
         app:layout_constraintTop_toBottomOf="@+id/imageViewScrunchie"
         app:layout_constraintVertical_bias="0.0" />
@@ -85,14 +85,14 @@
 
     <ImageView
         android:id="@+id/imageViewScrunchie"
-        android:layout_width="133dp"
-        android:layout_height="188dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.147"
+        android:layout_width="139dp"
+        android:layout_height="157dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline3"
+        app:layout_constraintEnd_toStartOf="@+id/buttonGreenStatus"
+        app:layout_constraintHorizontal_bias="0.293"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.103"
+        app:layout_constraintVertical_bias="0.506"
         app:srcCompat="@drawable/grayscrunchie" />
 
     <TextView
@@ -122,12 +122,12 @@
         android:id="@+id/imageViewFirstRoomie"
         android:layout_width="96dp"
         android:layout_height="91dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/guideline4"
         app:layout_constraintEnd_toStartOf="@+id/imageViewSecondRoomie"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline3"
-        app:layout_constraintVertical_bias="0.136"
+        app:layout_constraintVertical_bias="0.17"
         app:srcCompat="@drawable/grayscrunchie" />
 
     <TextView
@@ -136,62 +136,12 @@
         android:layout_height="wrap_content"
         android:text="Roommmate1"
         android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/guideline4"
         app:layout_constraintEnd_toStartOf="@+id/textViewSecondRoomie"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.405"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline4"
-        app:layout_constraintVertical_bias="0.078" />
-
-    <TextView
-        android:id="@+id/textViewRoom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="27dp"
-        android:text="TextView"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/buttonInfoScreen"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.516"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.998" />
-
-    <TextView
-        android:id="@+id/textViewHandlerTest"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.812"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonYellowStatus"
-        app:layout_constraintVertical_bias="0.144" />
-
-    <ImageView
-        android:id="@+id/imageViewSecondRoomie"
-        android:layout_width="89dp"
-        android:layout_height="85dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageViewThirdRoomie"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/imageViewFirstRoomie"
-        app:layout_constraintTop_toTopOf="@+id/guideline3"
-        app:layout_constraintVertical_bias="0.136"
-        app:srcCompat="@drawable/blankscrunchie" />
-
-    <ImageView
-        android:id="@+id/imageViewThirdRoomie"
-        android:layout_width="91dp"
-        android:layout_height="84dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/imageViewSecondRoomie"
-        app:layout_constraintTop_toTopOf="@+id/guideline3"
-        app:layout_constraintVertical_bias="0.136"
-        app:srcCompat="@drawable/blankscrunchie" />
+        app:layout_constraintTop_toBottomOf="@+id/imageViewFirstRoomie"
+        app:layout_constraintVertical_bias="0.307" />
 
     <TextView
         android:id="@+id/textViewSecondRoomie"
@@ -199,12 +149,12 @@
         android:layout_height="wrap_content"
         android:text="TextView"
         android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="@+id/buttonInfoScreen"
-        app:layout_constraintEnd_toStartOf="@+id/textViewThirdRoomie"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/textViewFirstRoomie"
-        app:layout_constraintTop_toTopOf="@+id/guideline4"
-        app:layout_constraintVertical_bias="0.078" />
+        app:layout_constraintBottom_toTopOf="@+id/guideline4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewSecondRoomie"
+        app:layout_constraintVertical_bias="0.322" />
 
     <TextView
         android:id="@+id/textViewThirdRoomie"
@@ -212,25 +162,75 @@
         android:layout_height="wrap_content"
         android:text="TextView"
         android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/guideline4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.561"
+        app:layout_constraintStart_toEndOf="@+id/textViewSecondRoomie"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewThirdRoomie"
+        app:layout_constraintVertical_bias="0.307" />
+
+    <TextView
+        android:id="@+id/textViewRoom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonInfoScreen"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline4"
+        app:layout_constraintVertical_bias="0.155" />
+
+    <TextView
+        android:id="@+id/textViewHandlerTest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="65dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/imageViewScrunchie"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.122"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageView
+        android:id="@+id/imageViewSecondRoomie"
+        android:layout_width="96dp"
+        android:layout_height="89dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline4"
+        app:layout_constraintEnd_toStartOf="@+id/imageViewThirdRoomie"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imageViewFirstRoomie"
+        app:layout_constraintTop_toTopOf="@+id/guideline3"
+        app:layout_constraintVertical_bias="0.167"
+        app:srcCompat="@drawable/blankscrunchie" />
+
+    <ImageView
+        android:id="@+id/imageViewThirdRoomie"
+        android:layout_width="93dp"
+        android:layout_height="89dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/textViewSecondRoomie"
-        app:layout_constraintTop_toTopOf="@+id/guideline4"
-        app:layout_constraintVertical_bias="0.078" />
+        app:layout_constraintStart_toEndOf="@+id/imageViewSecondRoomie"
+        app:layout_constraintTop_toTopOf="@+id/guideline3"
+        app:layout_constraintVertical_bias="0.183"
+        app:srcCompat="@drawable/blankscrunchie" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="355dp" />
+        app:layout_constraintGuide_begin="264dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="498dp" />
+        app:layout_constraintGuide_begin="439dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

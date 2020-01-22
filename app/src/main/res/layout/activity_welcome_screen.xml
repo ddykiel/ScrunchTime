@@ -40,7 +40,7 @@
         android:id="@+id/textViewUserID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Your randomly-generated ID is: 00000"
+        android:text="Your randomly-generated ID is: -1"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -109,13 +109,14 @@
 
     <TextView
         android:id="@+id/textViewInfo"
-        android:layout_width="362dp"
-        android:layout_height="46dp"
+        android:layout_width="357dp"
+        android:layout_height="78dp"
+        android:padding="15dp"
         android:text='Once you start the app, you can go to the "Info" screen to add up to two more roommates.'
         android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/buttonStartApp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextRoomName"
-        android:padding="20dp"/>
+        app:layout_constraintTop_toBottomOf="@+id/editTextRoomName" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -80,10 +80,17 @@ public class HomeScreen extends AppCompatActivity {
         statusButtons.add(buttonGreenStatus);
         statusButtons.add(buttonYellowStatus);
 
-        for (Button b: statusButtons){
-            b.setEnabled(false);
-            b.setBackgroundColor(Color.parseColor("#d8d8d8"));
+        if (user.getStatus().equals("INACTIVE")){
+            for (Button b: statusButtons){
+                b.setEnabled(false);
+                b.setBackgroundColor(Color.parseColor("#d8d8d8"));
+            }
+        } else {
+            switchActiveScrunchie.setChecked(true);
         }
+
+        setRoommateScrunchieColor(imageViewScrunchie, user);
+
 
         final TextView textViewHandlerTest = (TextView) findViewById(R.id.textViewHandlerTest);
         /*final Handler handler = new Handler();

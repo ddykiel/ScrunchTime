@@ -11,10 +11,10 @@
 
     <TextView
         android:id="@+id/textViewInformationTitle"
-        android:layout_width="135dp"
-        android:layout_height="81dp"
+        android:layout_width="116dp"
+        android:layout_height="65dp"
         android:paddingLeft="20dp"
-        android:paddingTop="40dp"
+        android:paddingTop="20dp"
         android:paddingRight="20dp"
         android:paddingBottom="20dp"
         android:text="Information"
