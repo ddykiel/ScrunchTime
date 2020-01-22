@@ -2,11 +2,12 @@ package github.io.ddykiel;
 import java.util.ArrayList;
 import java.io.Serializable;
 
+// A class that stores data about the user's room
 public class RoomModel implements Serializable {
     private String roomName;
     private ArrayList<RoommateModel> roomies;
     private RoommateModel user;
-    private ServerTranslator translator;
+    private ServerTranslator translator; // Used to turn client-side language into server-side language
 
     public RoomModel(String s, RoommateModel currentUser, RoommateModel firstRoommate){
 
@@ -14,6 +15,7 @@ public class RoomModel implements Serializable {
         user = currentUser;
 
         roomies = new ArrayList<RoommateModel>();
+        // The user isn't in this list, since they're treated differently
         roomies.add(firstRoommate);
         translator = new ServerTranslator();
     }

@@ -4,7 +4,9 @@ import java.io.Serializable;
 import java.util.HashMap;
 
 public class ServerTranslator implements Serializable {
-// ArrayList serverPair;
+
+    // The ServerTranslator stores a HashMap, mapping Client IDs to Server IDs
+    // We gave the roommateModels unique Client IDs to de-couple them from the unique Server IDs
     private HashMap<Integer, Integer> clientToServerIDs;
 
     public ServerTranslator(){
@@ -13,7 +15,7 @@ public class ServerTranslator implements Serializable {
 
     // Translates the string "status," used on the client side, to the corresponding integers on the server side
     // The first two numbers are the version number. The last number is a code corresponding with a color.
-    // The server side is using a data type "small int," hence the five integers
+    // The server side uses a data type "small int," hence the five integers
     int convertStatus(RoommateModel r){
         String status = r.getStatus();
         int intStatus = -1;
@@ -45,8 +47,8 @@ public class ServerTranslator implements Serializable {
         return clientToServerIDs.get(clientID);
     }
 
-    void addID(RoommateModel r){
-        clientToServerIDs.put(r.getRoommateClientID(), -1);
+    void addID(RoommateModel r, int i){
+        clientToServerIDs.put(r.getRoommateClientID(), i);
     }
 
 }

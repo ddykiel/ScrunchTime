@@ -14,12 +14,16 @@ public class InfoScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info_screen);
 
+        // Create the button to go to the Home Screen and the button to add a roommate
         Button buttonHomeScreen = (Button) findViewById(R.id.buttonHomeScreen);
         Button buttonAddRoommate = (Button) findViewById(R.id.buttonAddRoommate);
 
+        // Create/Access objects from the last activity
         Intent intent = getIntent();
         final RoomModel userRoom = (RoomModel) intent.getSerializableExtra("userRoom");
 
+        // If the user clicks the button to go the home screen, take them to that screen.
+        // Carry over the roomModel object
         buttonHomeScreen.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
@@ -29,6 +33,8 @@ public class InfoScreen extends AppCompatActivity {
             }
         });
 
+        // If the user clicks the button to go add a roommate, take them to that activity.
+        // Carry over the roomModel object
         buttonAddRoommate.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {

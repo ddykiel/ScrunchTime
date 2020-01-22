@@ -1,6 +1,7 @@
 package github.io.ddykiel;
 import java.io.Serializable;
 
+// A class that stores data about roommates
 public class RoommateModel implements Serializable {
     private boolean isUser;
     private String status;
