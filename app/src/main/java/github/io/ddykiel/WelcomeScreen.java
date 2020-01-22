@@ -19,7 +19,7 @@ public class WelcomeScreen extends AppCompatActivity {
         Button buttonStartApp = (Button) findViewById(R.id.buttonStartApp);
 
         // Hard-coded for client testing: later these ints will be accessed from server
-        final int userIDInt = 1;
+        final int userIDInt = -1;
 
         // For the server, imagining we have instantiated a working serverObject
         /*int userIDInt = serverObject.RequestNewID();
@@ -58,8 +58,8 @@ public class WelcomeScreen extends AppCompatActivity {
 
                 // If fields aren't empty, create RoomModel and RoommateModels
                 if (!conditions){
-                    RoommateModel user = new RoommateModel(true, userNameString, 0);
-                    RoommateModel firstRoomie = new RoommateModel(false, roommateNameString, 1);
+                    RoommateModel user = new RoommateModel(true, userNameString, -2);
+                    RoommateModel firstRoomie = new RoommateModel(false, roommateNameString, 0);
                     RoomModel userRoom = new RoomModel(roomNameString, user, firstRoomie);
 
                     ServerTranslator translator = userRoom.getTranslator();
