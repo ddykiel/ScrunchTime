@@ -5,12 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.os.Handler; // Use postAtTime to test with lower API
 
 import java.util.ArrayList;
 
@@ -53,7 +55,7 @@ public class HomeScreen extends AppCompatActivity {
         final RoomModel userRoom = (RoomModel) intent.getSerializableExtra("userRoom");
         // Access other objects from the RoomModel
         final RoommateModel user = userRoom.getUser();
-        ArrayList<RoommateModel> roomies = userRoom.getRoommates();
+        final ArrayList<RoommateModel> roomies = userRoom.getRoommates();
 
         //  Create/Access a ServerTranslator. It translates language used on the client side to language used on the server side.
         // For more information, look at the comments for that class.
@@ -111,33 +113,32 @@ public class HomeScreen extends AppCompatActivity {
         // Set the image for the user's scrunchie
         setRoommateScrunchieColor(imageViewScrunchie, user);
 
-        // This code is supposed to run in the background every 30 seconds
-        // I could get it to run continuously in the background, but not every 30 seconds
-        // The postdelayed method requires an API of 29 or above to work. My phone is at API 25, and my emulator stopped working when the code got more complex.
-        // As such, I commented it out so I could test the other code on my phone.
-        // To get this function to work, it would have to be tested on an emulator.
-        /*final TextView textViewHandlerTest = (TextView) findViewById(R.id.textViewHandlerTest);
+        // This code runs in the background every 30 seconds
+       // Right now, it just sets a TextView flipping between two states
+        // In the future, it would call getIdState() for all the user's roommates
+        final TextView textViewHandlerTest = (TextView) findViewById(R.id.textViewHandlerTest);
         final Handler handler = new Handler();
 
         handler.post(new Runnable(){
-                boolean defaultHandlerState = false;
+                boolean defaultHandlerState = true;
                 @Override
                 public void run(){
                     if (defaultHandlerState){
                         textViewHandlerTest.setText("State A");
-                        //defaultHandlerState = !defaultHandlerState;
-                        //handler.postDelayed(this, 30,000);
+
                     } else {
                         textViewHandlerTest.setText("State B");
-                        //defaultHandlerState = !defaultHandlerState;
-                        //handler.postDelayed(this, 30,000);
-                    }
-                    defaultHandlerState = !defaultHandlerState;
-                    //System.out.println("Print test");
-                    handler.postDelayed(this, 30,000);
 
+                    }
+                    /*for (RoommateModel r: roomies){
+                        serverObject.getId(translator.convertID(r));
+                    }*/
+                    defaultHandlerState = !defaultHandlerState;
+                    long now = SystemClock.uptimeMillis();
+                    long next = now + 30000;
+                    handler.postAtTime(this, next);
                 }
-            });*/
+            });
 
         switchActiveScrunchie.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener(){
                 @Override
