@@ -4,6 +4,29 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+
+    <!--Welcome Screen-->
+    <string name="WelcomeToScrunchTime">Welcome to Scrunch Time!</string>
+    <string name="EnterYourName">Enter Your Name</string>
+    <string name="NotSoRandomID">Your randomly-generated ID is: -1</string>
+    <string name="EnterRoommatesName">Enter roommate\'s name</string>
+    <string name="EnterRoommatesID">Enter roommate\'s ID</string>
+    <string name="EnterRoomName">Enter room name</string>
+    <string name="Start">Start App!</string>
+    <string name="InfoWelcomeScreen">Once you start the app, you can go to the "Info" screen to add up to two more roommates.</string>
+
+    <!--Home Screen-->
+    <string name="Inactive">Inactive</string>
+    <string name="Active">Active</string>
+    <string name="You">You</string>
+    <string name="ScrunchieDescription">An image of a scrunchie</string>
+    <string name="GoToInfoScreen">Go to Info Screen</string>
+
+    <!--Info Screen-->
+    <string name="Information">Information</string>
+    <string name="AboutTheApp">About the App</string>
+    <string name="GoToHomeScreen">Go to Home Screen </string>
+    <string name="AddRoommate">Add Roommate</string>
     <string name="InfoScreenColors">
     Welcome to the Scrunch Time app! For quick reference, here is the meaning of each scrunchie color.
         \n\nRed: Do not disturb
@@ -15,4 +38,8 @@
     <string name="InfoScreenAboutApp">
         Scrunch time was developed to facilitate roommate communication. By selecting the color that best represents your mood, you can quickly and easily share that information with your roommate.
     </string>
+
+    <!--Add Roommate Screen-->
+    <string name="InfoAboutRoommate">Your roommate can find their ID in their "Info" screen.</string>
+
 </resources>
